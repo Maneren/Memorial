@@ -1,79 +1,81 @@
 class OrderedArray {
-    constructor(){
+    constructor() {
         this.arr = new Array();
     }
 
-    clear(){
+    clear() {
         this.arr = new Array();
     }
-    
-    join(sep){
+
+    join(sep) {
         return this.arr.join(sep);
     }
-    
-    push(el){
+
+    push(el) {
         this.arr.push(el);
         this.sort(this.arr)
     }
-    
-    sort(arr){
+
+    sort(arr) {
         let change = {
-            "A" : 4,
-            "B" : 4,
-            "C" : 2,
-            "E" : 0
+            "A": 4,
+            "B": 4,
+            "C": 2,
+            "E": 0
         };
         let semi = [];
         arr.sort(
             (a, b) => {
-                let outa = "", outb = "", out;
-                
+                let outa = "",
+                    outb = "",
+                    out;
+
                 a = a.replace(/\d/ig, parseInt(a[0]) + change[a[2]]);
                 b = b.replace(/\d/ig, parseInt(b[0]) + change[b[2]]);
-                
-                if(a[4] == "H") a = a.replace(/\d/ig, " " + a[0]);
-                if(b[4] == "H") b = b.replace(/\d/ig, " " + b[0]);
-                
-                for(let i in a){
+
+                if (a[4] == "H") a = a.replace(/\d/ig, " " + a[0]);
+                if (b[4] == "H") b = b.replace(/\d/ig, " " + b[0]);
+
+                for (let i in a) {
                     outa += a.charCodeAt(i)
                 }
-                for(let i in b){
+                for (let i in b) {
                     outb += b.charCodeAt(i)
                 }
-                
+
                 outa = parseInt(outa)
                 outb = parseInt(outb)
                 out = outa - outb;
-                
+
                 return out;
             }
         )
     }
-    
-    indexOf(index){
+
+    indexOf(index) {
         return this.arr.indexOf(index);
     }
-    
-    splice(i, len){
+
+    splice(i, len) {
         this.arr.splice(i, len);
     }
 }
 
-(function (window, document) {
+(function(window, document) {
     const queryAll = document.querySelectorAll.bind(document);
     const query = document.querySelector.bind(document);
-    
+
     listOfSelected = query("#listOfSelected");
-    
+
     selectedTeams = new OrderedArray();
     const clickHandler = event => {
         cell = event.target;
         table = cell.parentNode.parentNode.parentNode.parentNode.className;
         type = table.includes("lads");
-        if(type) type = "-H"
+        if (type) type = "-H"
         else type = "-D";
-        if(cell.className == "empty") return;
-        if(!cell.selected){
+        if (cell.className == "empty") return;
+        if (!cell.selected) {
             cell.selected = true;
             selectedTeams.push(cell.textContent + type);
             cell.className = "selected";
@@ -85,49 +87,47 @@ class OrderedArray {
         }
         listOfSelected.innerHTML = selectedTeams.join(", ");
     };
-    
-    [...queryAll(".choose table tbody td")].forEach(cell=>{
+
+    [...queryAll(".choose table tbody td")].forEach(cell => {
         cell.onclick = e => clickHandler(e);
         cell.selected = false;
     });
-    
-    function generate(event){
+
+    function generate(event) {
         event.preventDefault();
-        if(selectedTeams.length < 1){
+        if (selectedTeams.length < 1) {
             alert("Nejsou vybrané žádné týmy");
             return;
         }
-        if(selectedTeams.length == 1){
+        if (selectedTeams.length == 1) {
             alert("Musí být vybrány alespoň 2 týmy");
             return;
         }
         confirmed = confirm("Opravdu chcete spustit generování?");
-        if(confirmed){
+        if (confirmed) {
             time = query("#time").value;
             oneMatch = query("#oneMatch").value;
-            if(time.length < 1 || oneMatch.length < 1) 
+            if (time.length < 1 || oneMatch.length < 1)
                 return alert("Nespravné časové parametry");
             matches = time * 60 / oneMatch;
             alert(selectedTeams + "\n" + matches)
-        }
-        else return;
-        
+        } else return;
+
     }
-    
+
     query("#generate").onclick = e => generate(e);
 
     $('input:radio[name="y-o"]').change(
-        function(){
+        function() {
             if ($(this).is(':checked') && $(this).val() == 'y') {
                 $(".old-container").hide(500)
                 $(".young-container").show(500)
-            }
-            else if ($(this).is(':checked') && $(this).val() == 'o') {
+            } else if ($(this).is(':checked') && $(this).val() == 'o') {
                 $(".old-container").show(500)
                 $(".young-container").hide(500)
             }
         }
     );
     $(".old-container").hide(0)
-    
+
 })(window, document);

@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="../shared/assets/general.css">
-        <link rel="stylesheet" href="assets/style.css">
 
-        <title>Memorial - Tvorba</title>
-        <link rel="icon" href="../shared/media/icon.png">
-    </head>
-    <body>
-        <div class="container">
-            <!-- Top navbar menu -->
-            <div class="navbar-placeholder"></div>
-            
-            <!-- Header -->
-            <div class="header-placeholder"></div>
-            
-            <!--<div class="table-responsive">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../shared/assets/general.css">
+    <link rel="stylesheet" href="assets/style.css">
+
+    <title>Memorial - Tvorba</title>
+    <link rel="icon" href="../shared/media/icon.png">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Top navbar menu -->
+        <div class="navbar-placeholder"></div>
+
+        <!-- Header -->
+        <div class="header-placeholder"></div>
+
+        <!--<div class="table-responsive">
                 <table class="table table-bordered table-condensed">
                     <thead>
                         <tr>
@@ -41,20 +43,20 @@
                     </tbody>
                 </table>
             </div>-->
-            <!-- Header -->
-            
-            <!-- Main content -->
-            <h2>Výběr týmů</h2>
-            <form class="form-inline">
-                <!-- <input type="radio" id="y" name="y-o">
+        <!-- Header -->
+
+        <!-- Main content -->
+        <h2>Výběr týmů</h2>
+        <form class="form-inline">
+            <!-- <input type="radio" id="y" name="y-o">
                 <label for="y">Mladší</label>
                 <input type="radio" id="o" name="y-o">
                 <label for="o">Starší</label> -->
 
-                <label class="radio-inline"><input type="radio" value="y" name="y-o" checked>Mladší</label>
-                <label class="radio-inline"><input type="radio" value="o" name="y-o">Starší</label>
-                </form>
-            <div class="young-container">
+            <label class="radio-inline"><input type="radio" value="y" name="y-o" checked>Mladší</label>
+            <label class="radio-inline"><input type="radio" value="o" name="y-o">Starší</label>
+        </form>
+        <div class="young-container">
             <h3 id="title-young">Mladší</h3>
             <h4>Hoši</h4>
             <div class="table-responsive choose young lads">
@@ -110,8 +112,8 @@
                     </tbody>
                 </table>
             </div>
-            </div>
-            <div class="old-container">
+        </div>
+        <div class="old-container">
             <h3 id="title">Starší</h3>
             <h4>Hoši</h4>
             <div class="table-responsive choose old lads">
@@ -191,17 +193,17 @@
                     </tbody>
                 </table>
             </div>
-            </div>
+        </div>
+        <br>
+        <div align="center" class="debug">
+            <label>Vybrané týmy: </label>
             <br>
-            <div align="center" class="debug">
-                <label>Vybrané týmy: </label>
-                <br>
-                <textarea id="listOfSelected" rows="5"></textarea>
-                <br>
-            </div>
+            <textarea id="listOfSelected" rows="5"></textarea>
             <br>
-            <h2 is="parameters">Parametry turnaje</h2>
-            <!-- <form align="center" action class>
+        </div>
+        <br>
+        <h2 is="parameters">Parametry turnaje</h2>
+        <!-- <form align="center" action class>
                 <label>Celková délka turnaje v hodinách:</label>
                 <input type="number" id="time">
                 <br>
@@ -212,24 +214,25 @@
                 <br>
                 <button class="btn btn-primary" id="generate">Generovat</button>
             </form> -->
-            <form action="" class="vertical-form">
-                <div class="form-group">
-                    <label for="time" class="control-label">Celková délka turnaje v hodinách</label>
-                    <input type="number" class="form-control" id="time">
-                </div>
-                <div class="form-group">
-                    <label for="oneMatch"  class="control-label">Délka jednoho zápasu v minutách (včetně střídání)</label>
-                    <input type="number" class="form-control" id="oneMatch">
-                </div>
-                <button type="button" class="btn btn-primary" id="generate">Generovat</button>
-            </form>
-            <!-- Main content - end -->
-            
-            <!-- Footer -->
-            <div class="footer-placeholder"></div>
-            
-        </div>
-        <script src="../shared/assets/load_placeholders.js"></script>
-        <script src="assets/script.js"></script>
-    </body>
+        <form action="" class="vertical-form">
+            <div class="form-group">
+                <label for="time" class="control-label">Celková délka turnaje v hodinách</label>
+                <input type="number" class="form-control" id="time">
+            </div>
+            <div class="form-group">
+                <label for="oneMatch" class="control-label">Délka jednoho zápasu v minutách (včetně střídání)</label>
+                <input type="number" class="form-control" id="oneMatch">
+            </div>
+            <button type="button" class="btn btn-primary" id="generate">Generovat</button>
+        </form>
+        <!-- Main content - end -->
+
+        <!-- Footer -->
+        <div class="footer-placeholder"></div>
+
+    </div>
+    <script src="../shared/assets/load_placeholders.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+
 </html>
