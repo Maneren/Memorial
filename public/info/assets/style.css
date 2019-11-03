@@ -1,0 +1,21 @@
+ol[class="instructions"] {
+    list-style-type: none;
+    list-style-position: outside;
+    counter-reset: listNumbering;
+} 
+
+.step {
+    font-size: 1em;
+    counter-increment: listNumbering;
+    margin:10px;
+}
+
+ol[class="instructions"] li:before {
+    content: counter(listNumbering, decimal) ')';
+    font-size: 1.1em;
+    margin:5px;
+}
+
+.autors {
+    text-align: center;
+}
