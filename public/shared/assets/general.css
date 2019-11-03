@@ -6,6 +6,8 @@
 }
 
 body {
+    margin-top: 65px;
+    margin-bottom: 4em;
     background : white;
     color : black;
     font-family: 'Roboto', sans-serif;
@@ -15,18 +17,16 @@ button:active, input:focus{
     outline:none;
 }
 
-.head-jumbo {
-    margin-top:15vh;
-}
-
 .footer {
     text-align: right;
     font-size: 0.7em;
     padding: 1em;
+    padding-right: 5em;
     margin-top: 3em;
     background-color: #eee;
     width: 100vw;
-    position:absolute;
+    position: fixed;
     left:0;
+    bottom: 0;
     border-top: 1px solid #aaa;
 }
