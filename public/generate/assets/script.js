@@ -2,6 +2,10 @@ class OrderedArray {
     constructor(){
         this.arr = new Array();
     }
+
+    clear(){
+        this.arr = new Array();
+    }
     
     join(sep){
         return this.arr.join(sep);
@@ -111,5 +115,19 @@ class OrderedArray {
     }
     
     query("#generate").onclick = e => generate(e);
+
+    $('input:radio[name="y-o"]').change(
+        function(){
+            if ($(this).is(':checked') && $(this).val() == 'y') {
+                $(".old-container").hide(500)
+                $(".young-container").show(500)
+            }
+            else if ($(this).is(':checked') && $(this).val() == 'o') {
+                $(".old-container").show(500)
+                $(".young-container").hide(500)
+            }
+        }
+    );
+    $(".old-container").hide(0)
     
 })(window, document);

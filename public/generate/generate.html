@@ -45,12 +45,15 @@
             
             <!-- Main content -->
             <h2>Výběr týmů</h2>
-            <p>
-                <input type="radio" id="y" name="y-o">
+            <form class="form-inline">
+                <!-- <input type="radio" id="y" name="y-o">
                 <label for="y">Mladší</label>
                 <input type="radio" id="o" name="y-o">
-                <label for="o">Starší</label>
-            </p>
+                <label for="o">Starší</label> -->
+
+                <label class="radio-inline"><input type="radio" value="y" name="y-o" checked>Mladší</label>
+                <label class="radio-inline"><input type="radio" value="o" name="y-o">Starší</label>
+                </form>
             <div class="young-container">
             <h3 id="title-young">Mladší</h3>
             <h4>Hoši</h4>
@@ -198,22 +201,27 @@
             </div>
             <br>
             <h2 is="parameters">Parametry turnaje</h2>
-            <form align="center" action>
+            <!-- <form align="center" action class>
                 <label>Celková délka turnaje v hodinách:</label>
-                <input
-                    type="number"
-                    id="time">
+                <input type="number" id="time">
                 <br>
                 <br>
                 <label>Délka jednoho zápasu v minutách (včetně střídání):</label>
-                <input
-                    type="number"
-                    id="oneMatch">
+                <input type="number" id="oneMatch">
                 <br>
                 <br>
-                <button class="btn btn-primary" id="generate">
-                    Generovat
-                </button>
+                <button class="btn btn-primary" id="generate">Generovat</button>
+            </form> -->
+            <form action="" class="vertical-form">
+                <div class="form-group">
+                    <label for="time" class="control-label">Celková délka turnaje v hodinách</label>
+                    <input type="number" class="form-control" id="time">
+                </div>
+                <div class="form-group">
+                    <label for="oneMatch"  class="control-label">Délka jednoho zápasu v minutách (včetně střídání)</label>
+                    <input type="number" class="form-control" id="oneMatch">
+                </div>
+                <button type="button" class="btn btn-primary" id="generate">Generovat</button>
             </form>
             <!-- Main content - end -->
             

@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../shared/assets/general.css">
         <link rel="stylesheet" href="assets/style.css">
 
-        <title>Memorial - Tvorba</title>
+        <title>Memorial - Přihlášení</title>
         <link rel="icon" href="../shared/media/icon.png">
     </head>
     <body>
@@ -22,7 +22,20 @@
             <div class="header-placeholder"></div>
             
             <!-- Main content -->
-
+            <form action="">
+                <div class="form-group">
+                    <label for="user">Uživatelské jméno</label>
+                    <input type="text" class="form-control" id="user" autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Heslo</label>
+                    <input type="password" class="form-control" id="pwd" autocomplete="current-password">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Přihlásit</button>
+                    <button type="submit" class="btn btn-success">Přihlásit jako host</button>
+                </div>
+            </form>
             <!-- Main content - end -->
             
             <!-- Footer -->
@@ -30,6 +43,5 @@
 
         </div>
         <script src="../shared/assets/load_placeholders.js"></script>
-        <script src="assets/script.js"></script>
     </body>
 </html>

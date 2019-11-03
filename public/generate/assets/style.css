@@ -20,15 +20,6 @@ textarea{
     display:none;
 }
 
-#y:checked + .young-container {
-    display: none;
-}
-
-input{
-    width:10%;
-    text-align:center;
-}
-
 #generate{
     font-size:1.1em;
 }

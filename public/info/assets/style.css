@@ -8,6 +8,7 @@ ol[class="instructions"] {
     font-size: 1em;
     counter-increment: listNumbering;
     margin:10px;
+    display: block;
 }
 
 ol[class="instructions"] li:before {
