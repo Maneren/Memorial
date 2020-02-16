@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../shared/assets/general.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../shared/assets/css/general.css">
     <link rel="stylesheet" href="assets/style.css">
 
     <title>Memorial - Tvorba</title>
@@ -217,11 +217,11 @@
         <form action="" class="vertical-form">
             <div class="form-group">
                 <label for="time" class="control-label">Celková délka turnaje v hodinách</label>
-                <input type="number" class="form-control" id="time">
+                <input type="number" class="form-control" id="time" min="1">
             </div>
             <div class="form-group">
                 <label for="oneMatch" class="control-label">Délka jednoho zápasu v minutách (včetně střídání)</label>
-                <input type="number" class="form-control" id="oneMatch">
+                <input type="number" class="form-control" id="oneMatch" min="1">
             </div>
             <button type="button" class="btn btn-primary" id="generate">Generovat</button>
         </form>
@@ -231,7 +231,7 @@
         <div class="footer-placeholder"></div>
 
     </div>
-    <script src="../shared/assets/load_placeholders.js"></script>
+    <script src="../shared/assets/scripts/load_placeholders.js"></script>
     <script src="assets/script.js"></script>
 </body>
 

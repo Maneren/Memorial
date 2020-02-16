@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="../shared/assets/general.css">
-        <link rel="stylesheet" href="assets/style.css">
 
-        <title>Memorial - Přihlášení</title>
-        <link rel="icon" href="../shared/media/icon.png">
-    </head>
-    <body>
-        <div class="container">
-            <!-- Top navbar menu -->
-            <!-- <div class="navbar-placeholder"></div> -->
-            
-            <!-- Header -->
-            <div class="header-placeholder"></div>
-            
-            <!-- Main content -->
-            <form action="">
-                <div class="form-group">
-                    <label for="user">Uživatelské jméno</label>
-                    <input type="text" class="form-control" id="user" autocomplete="username">
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Heslo</label>
-                    <input type="password" class="form-control" id="pwd" autocomplete="current-password">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Přihlásit</button>
-                    <button type="submit" class="btn btn-success">Přihlásit jako host</button>
-                </div>
-            </form>
-            <!-- Main content - end -->
-            
-            <!-- Footer -->
-            <div class="footer-placeholder"></div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        </div>
-        <script src="../shared/assets/load_placeholders.js"></script>
-    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../shared/assets/css/general.css">
+    <link rel="stylesheet" href="assets/style.css">
+
+    <title>Memorial - Přihlášení</title>
+    <link rel="icon" href="../shared/media/icon.png">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header-placeholder"></div>
+
+        <!-- Main content -->
+        <form name="login" id="login" action="" method="GET" autocomplete="on" enctype="application/x-www-form-urlencoded">
+            <div class="form-group">
+                <label for="user">Uživatelské jméno</label>
+                <input name="username" type="text" class="form-control" id="username" autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Heslo</label>
+                <input name="password" type="password" class="form-control" id="password" autocomplete="current-password">
+            </div>
+            <div class="form-group">
+                <button type="submit" id="submit" class="btn btn-primary">Přihlásit</button>
+                <button type="submit" id="submit-guest" class="btn btn-success">Přihlásit jako host</button>
+            </div>
+        </form>
+        <!-- Main content - end -->
+
+        <!-- Footer -->
+        <div class="footer-placeholder"></div>
+
+    </div>
+    <script src="../shared/assets/scripts/load_placeholders.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+
 </html>

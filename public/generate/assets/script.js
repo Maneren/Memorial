@@ -65,9 +65,9 @@ class OrderedArray {
     const queryAll = document.querySelectorAll.bind(document);
     const query = document.querySelector.bind(document);
 
-    listOfSelected = query("#listOfSelected");
+    //listOfSelected = query("#listOfSelected");
 
-    selectedTeams = new OrderedArray();
+    /*selectedTeams = new OrderedArray();
     const clickHandler = event => {
         cell = event.target;
         table = cell.parentNode.parentNode.parentNode.parentNode.className;
@@ -85,8 +85,32 @@ class OrderedArray {
             let i = selectedTeams.indexOf(cell.textContent);
             selectedTeams.splice(i, 1);
         }
-        listOfSelected.innerHTML = selectedTeams.join(", ");
+        //listOfSelected.innerHTML = selectedTeams.join(", ");
+    };*/
+
+    selectedTeams = {
+        lads = [],
+        lasses = []
     };
+    const clickHandler = event => {
+        cell = event.target;
+        table = cell.parentNode.parentNode.parentNode.parentNode.className;
+        let target;
+        if (table.includes("lads"))
+            target = selectedTeams.lads
+        else if (table.includes("lasses"))
+            target = selectedTeams.lasses;
+        if (!cell.selected) {
+            cell.selected = true;
+            target.push(cell.textContent + type);
+            cell.className = "selected";
+        } else {
+            cell.selected = false;
+            cell.className = "";
+            let i = target.indexOf(cell.textContent);
+            selectedTeams.splice(i, 1);
+        }
+    }
 
     [...queryAll(".choose table tbody td")].forEach(cell => {
         cell.onclick = e => clickHandler(e);
@@ -110,7 +134,7 @@ class OrderedArray {
             if (time.length < 1 || oneMatch.length < 1)
                 return alert("Nespravné časové parametry");
             matches = time * 60 / oneMatch;
-            alert(selectedTeams + "\n" + matches)
+            console.log(selectedTeams + "\n" + matches)
         } else return;
 
     }
